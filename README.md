@@ -3,7 +3,7 @@
 - **Nama:** Nabila Ramadhani Mujahidin
 - **NIM:** 123140062
 - **Program Studi:** Teknik Informatika
-- **Kelas:** Pengembangan Aplikasi Mobile RA
+- **Kelas:** Pengembangan Aplikasi Mobile RB
 
 ## Struktur Project
 ```
