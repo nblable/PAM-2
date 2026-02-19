@@ -11,11 +11,9 @@ data class Berita(
 
 fun arusBerita(): Flow<Berita> = flow {
     val data = listOf(
-        Berita("King MU Menang", "Olahraga", "MU menang 4 kali beruntun semenjak di latih oleh carrick"),
-        Berita("Awal Puasa Berbeda", "Agama", "Awal puasa berbeda karena Muhammadiyah di laksanakan di tanggal 18 Februari 2026 sedangkan untuk NU di tanggal 19 Februari 2026"),
-        Berita("IHSG Kembali Menguat","Ekonomi", "IHSG kembali menguat berkat kerja keras dari menteri keungan kita yaitu Purbaya Sadewa"),
-        Berita("GPT vs Gemini","Teknologi", "GPT dan Gemini seringkali bersaing dengan keras"),
-        Berita("Decul Nangis","Olahraga", "Barcelona kembali kalah dalam laga Barcelona vs ATM dengan skor 4-0 unggul ATM")
+        Berita("NABILA CANTIK", "Kecantikan", "Cantik itu bukan hanya berasal dari luar tetapi dari dalam juga"),
+        Berita("BAJU LEBARAN", "Fashion", "Jika ingin membeli baju lebaran beli di Ethica"),
+        Berita("JAM TANGAN","Waktu", "Waktu adalah uang, karena saya seorang BENDUM")
     )
 
     for (berita in data) {
@@ -27,11 +25,11 @@ fun arusBerita(): Flow<Berita> = flow {
 suspend fun ambilDetail(berita: Berita): String =
     withContext(Dispatchers.IO) {
         delay(1000)
-        "Detail berita: ${berita.detail}"
+        "Berita lengkap: ${berita.detail}"
     }
 
 fun main() = runBlocking {
-    println("---NEWS FEED---")
+    println("===Arus Berita===")
     val jumlahDibaca = MutableStateFlow(0)
 
     launch {
@@ -52,7 +50,7 @@ fun main() = runBlocking {
 
             val detail = async {
                 ambilDetail(
-                        Berita(tampil, "Olahraga", "")
+                        Berita(tampil, "Semua", "")
                 )
             }
 
